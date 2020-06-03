@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+   <table>
+       <tr>
+           <th>Action</th>
+           <th>Stock</th>
+           <th>Quantity</th>
+           <th>Unit price</th>
+           <th>Total price</th>
+           <th>Date</th>
+       </tr>
+       {% for rows in transactions %}
+       <tr>
+           <td>{{ rows['action'] }}</td>
+           <td>{{ rows['symbol'] }}</td>
+           <td>{{ rows['quantity'] }}</td>
+           <td>{{ rows['unit_price'] }}</td>
+           <td>{{ rows['total_price'] }}</td>
+           <td>{{ rows['date'] }}</td>
+       </tr>
+       {% endfor %}
+   </table>
+{% endblock %}
